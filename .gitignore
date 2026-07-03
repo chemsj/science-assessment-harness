@@ -1,3 +1,8 @@
 .DS_Store
 __pycache__/
 *.pyc
+# 저작권 — 교과서 원본·파생 자료는 로컬 전용 (실수 업로드 방지)
+references/_교과서/*
+!references/_교과서/README.md
+references/수행평가-요소/*
+!references/수행평가-요소/README.md
