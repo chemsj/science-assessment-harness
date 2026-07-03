@@ -6,3 +6,6 @@ references/_교과서/*
 !references/_교과서/README.md
 references/수행평가-요소/*
 !references/수행평가-요소/README.md
+
+# 개인 권한 설정 — 로컬 전용
+.claude/settings.local.json
