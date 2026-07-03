@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8">
+<title>화학(과학) 수행평가 패키지 — 전체 이해 자료</title>
+<style>
+@page { size: A4 portrait; margin: 14mm; }
+* { box-sizing: border-box; }
+body { font-family:'Pretendard','맑은 고딕','Malgun Gothic',sans-serif; font-size:10.5pt; color:#161616; line-height:1.65; margin:0 auto; max-width:1000px; padding:24px; background:#fff; }
+h1 { font-size:19pt; margin:0 0 4pt; letter-spacing:-0.3px; }
+h2 { font-size:14pt; margin:26pt 0 8pt; padding:6pt 10pt; background:#1f4e46; color:#fff; border-radius:5px; }
+h3 { font-size:12pt; margin:16pt 0 5pt; border-left:4px solid #2b8; padding-left:8pt; }
+.sub { color:#555; font-size:9.6pt; margin-bottom:4pt; }
+.lead { background:#f5f9f7; border:1px solid #d7e6de; border-radius:6px; padding:10pt 14pt; margin:12pt 0; font-size:10.2pt; }
+table { width:100%; border-collapse:collapse; margin:8pt 0; }
+th,td { border:1px solid #b3b3b3; padding:5pt 7pt; vertical-align:top; text-align:left; }
+th { background:#eef1f0; font-weight:600; }
+td.c, th.c { text-align:center; white-space:nowrap; }
+.scroll { overflow-x:auto; }
+.code { font-family:ui-monospace,SFMono-Regular,Consolas,monospace; color:#0a7d33; font-size:9.2pt; }
+.warn { background:#fff3cd; border:1px solid #e8d48a; border-radius:6px; padding:9pt 13pt; margin:10pt 0; font-size:9.8pt; }
+.warn b { color:#8a5a00; }
+.good { background:#eaf5ee; border:1px solid #b9ddc6; border-radius:6px; padding:9pt 13pt; margin:10pt 0; font-size:9.8pt; }
+.flow { display:flex; gap:6px; flex-wrap:wrap; margin:12pt 0; }
+.flow .st { flex:1; min-width:130px; border:1.5px solid #2b8; border-radius:8px; padding:8pt 9pt; background:#fafcfb; }
+.flow .st .n { font-size:8.5pt; color:#fff; background:#1f4e46; border-radius:3px; padding:0 6pt; font-weight:700; display:inline-block; margin-bottom:3pt; }
+.flow .st.gray { border-color:#999; } .flow .st.gray .n { background:#666; }
+.flow .st b { display:block; font-size:10pt; margin:1pt 0; }
+.flow .st .s { font-size:8.6pt; color:#444; line-height:1.5; }
+.flow .arrow { align-self:center; color:#2b8; font-weight:700; font-size:13pt; }
+pre.tree { background:#f7f8f8; border:1px solid #ddd; border-radius:6px; padding:10pt 12pt; font-family:ui-monospace,Consolas,monospace; font-size:8.8pt; line-height:1.55; overflow-x:auto; }
+ul { margin:4pt 0 8pt; padding-left:18pt; } li { margin:2.5pt 0; }
+.small { font-size:8.8pt; } .small td, .small th { padding:3.5pt 5pt; }
+.tag { display:inline-block; border-radius:3px; padding:0 6pt; font-size:8.4pt; font-weight:600; color:#fff; vertical-align:middle; }
+.tag.b9 { background:#0a7d33; } .tag.mth { background:#a06a00; } .tag.cr { background:#5a5a8a; }
+.foot { margin-top:24pt; font-size:8.6pt; color:#666; border-top:1px solid #ccc; padding-top:8pt; }
+.kpi { display:flex; gap:8px; flex-wrap:wrap; margin:10pt 0; }
+.kpi div { flex:1; min-width:140px; border:1px solid #cdd8d3; border-radius:7px; padding:8pt 10pt; background:#fafcfb; text-align:center; }
+.kpi .num { font-size:16pt; font-weight:800; color:#1f4e46; }
+.kpi .lbl { font-size:8.6pt; color:#555; }
+@media print { body { padding:0; } h2, .tag, .flow .st .n { -webkit-print-color-adjust:exact; print-color-adjust:exact; } }
+</style></head><body>
+
+<h1>화학(과학) 수행평가 패키지 — 전체 이해 자료</h1>
+<div class="sub">작성 2026-07-03 · 파생 문서(원본: CLAUDE.md · 단원-프로토콜.md · 평가-프로토콜.md · PROJECT.md) · 교사용 개요</div>
+
+<div class="lead">
+<b>한 줄 요약.</b> 이 패키지는 2022 개정 교육과정 <b>과학과</b>의 한 단원을, 교사의 4단계 역할
+(<b>① 교육과정 해석 → ② 수업 설계 → ③ 평가 설계 → ④ 수업 운영</b>)에 따라
+<b>공식 데이터에 근거해</b> 반복 수행하도록 돕는 Claude Code 작업 환경이다.
+AI가 지어내지 못하도록 <b>데이터·라벨·검증기(lint)의 3중 구조</b>로 막고, 교육적 판단은 언제나 <b>교사(편집장)</b>에게 남긴다.
+</div>
+
+<div class="kpi">
+  <div><div class="num">19</div><div class="lbl">과목 (2022 개정 과학과)</div></div>
+  <div><div class="num">284</div><div class="lbl">성취기준 + 성취수준(KICE) 원문</div></div>
+  <div><div class="num">92 + 613</div><div class="lbl">핵심아이디어 + 내용체계 (과목별 항목 합)</div></div>
+  <div><div class="num">12</div><div class="lbl">스킬 (단원 사이클 순)</div></div>
+  <div><div class="num">37</div><div class="lbl">lint 자가시험</div></div>
+</div>
+
+<!-- ================================================================ -->
+<h2>1. 핵심 철학 — "환각은 구조로 막는다"</h2>
+
+<p>생성형 AI의 가장 큰 위험은 <b>그럴듯하게 지어내는 것</b>이다(성취기준 코드, 배점, 학생 행동…).
+이 패키지는 그것을 "조심하자"가 아니라 <b>구조로</b> 막는다:</p>
+
+<div class="scroll"><table>
+<tr><th class="c" style="width:14%">장치</th><th>무엇</th><th>예</th></tr>
+<tr><td class="c"><b>① 데이터</b></td><td>사실(성취기준·평가방식·내용 체계·학점)은 기억이 아니라 <span class="code">references/</span>의 데이터 파일에서 <b>꺼내 쓴다</b>. 데이터에 없으면 지어내지 않고 <b>[확인 필요]</b>로 비운다.</td><td>성취기준은 항상 <span class="code">references/성취기준/화학.json</span>에서 코드+원문 그대로 인용</td></tr>
+<tr><td class="c"><b>② 라벨</b></td><td>모든 산출물에서 출처를 3계층으로 구분해 표기한다. <span class="tag b9">원문</span> 고시 원문 그대로 / <span class="tag mth">참고</span> 연수 자료 등 — "⚠ 고시 원문 아님" 명시 / <span class="tag cr">제안</span> 교사 판단 대상 제안 — 제안임을 명시.</td><td>단원 핵심 아이디어는 항상 <span class="tag cr">제안</span> — 교육과정 원문인 척하지 않음</td></tr>
+<tr><td class="c"><b>③ 검증기</b></td><td><span class="code">node scripts/lint.mjs</span>가 산출물을 기계 검사한다. 산출물을 만들거나 고칠 때마다 <b>통과 필수</b>. lint 자체를 고치면 자가시험(<span class="code">lint-test.mjs</span>, 위반 37종 주입→검출 확인)도 통과시킨다.</td><td>가짜 코드·배점 조작·근거 없는 점수·실명이 끼면 lint가 잡는다</td></tr>
+</table></div>
+
+<div class="good"><b>사람이 남는 자리.</b> 사실 정확성은 데이터+lint가 맡지만, <b>교육적 판단</b>
+(이 채점기준이 우리 반 수준에 맞나, 이 차시 배분이 현실적인가, 이 과세특 문장이 공정한가)은 교사가 <b>편집장</b>으로 남는다.
+모든 생성물은 <b>초안</b>이며, 각 문서 하단의 교사 확정란에서 채택·수정한다.</div>
+
+<div class="warn"><b>비식별 원칙.</b> 학생은 어떤 파일에서든 <b>번호로만</b> 다룬다. 실명·학번·생년월일 금지(lint가 번호 열 검사).
+번호↔실명 대응표는 패키지 밖(교무 시스템·교사 수첩)에만 둔다.</div>
+
+<!-- ================================================================ -->
+<h2>2. 전체 그림 — 단원 사이클 (단원-프로토콜.md)</h2>
+
+<p>교사의 4단계 역할(⚠ 근거: <span class="code">자료분석/</span> 임정미 연수자료 — 고시 원문 아님, 방법론 차용)을
+단원 단위 절차로 구현한 것이 <b>단원 프로토콜</b>이다. 기존 <b>평가 프로토콜</b>(준비→실시→결과→회고)은 ③~회고 구간의 원본으로 그대로 유효하다.</p>
+
+<div class="flow">
+  <div class="st"><span class="n">① 해석</span><b>교육과정 재구성</b><div class="s">성취기준의 개념 구조 파악<br>→ <span class="code">해석.md</span></div></div>
+  <div class="arrow">→</div>
+  <div class="st"><span class="n">② 수업 설계</span><b>사고 설계자</b><div class="s">핵심 질문·차시표·리허설<br>→ <span class="code">단원설계.md</span> · <span class="code">형성평가-N차시.html</span></div></div>
+  <div class="arrow">→</div>
+  <div class="st"><span class="n">③ 평가 설계</span><b>사고 평가자</b><div class="s">(=평가 프로토콜 '준비')<br>→ 구상·평가계획서·루브릭·활동지</div></div>
+  <div class="arrow">→</div>
+  <div class="st"><span class="n">④ 운영</span><b>학습 조력자</b><div class="s">(=평가 프로토콜 '실시'+피드백)<br>→ 관찰기록 CSV · <span class="code">피드백-반.md</span></div></div>
+  <div class="arrow">→</div>
+  <div class="st gray"><span class="n">결과</span><b>근거 연결</b><div class="s">관찰기록×루브릭 대조<br>→ 채점표 · 과세특 초안</div></div>
+  <div class="arrow">→</div>
+  <div class="st gray"><span class="n">회고 ↻</span><b>순환 닫기</b><div class="s">통계+운영 회고<br>→ 다음 단원 ①의 입력</div></div>
+</div>
+
+<div class="scroll"><table class="small">
+<tr><th class="c">단계</th><th>스킬 (자연어로 부르면 자동 실행)</th><th>산출물</th><th>교사가 확정하는 것</th></tr>
+<tr><td class="c"><b>① 해석</b></td><td><span class="code">교육과정해석</span></td><td>해석.md — 성취기준 원문 표·내용체계 분해·수행 동사 위계 분석·연계 지도</td><td>개념 구조 해석 동의·수정, 성취기준 묶음</td></tr>
+<tr><td class="c"><b>② 설계</b></td><td><span class="code">단원설계</span> → <span class="code">형성평가</span></td><td>단원설계.md(단원 핵심 아이디어·핵심 질문 3층위·차시표) · 형성평가 문항지(A4)</td><td>핵심 아이디어 문장, 질문 채택, 차시 수·순서, 형성평가 배치</td></tr>
+<tr><td class="c"><b>③ 준비</b></td><td>(<span class="code">구상</span> →) <span class="code">평가계획서</span> → <span class="code">루브릭</span> → <span class="code">활동지</span></td><td>구상.md(선택) · 평가계획서.html · 루브릭.html+<b>루브릭.json(기계용 쌍)</b> · 활동지.html · meta.json</td><td>아이디어 채택·변형, 배점·수준 기술, 반영비율·시기</td></tr>
+<tr><td class="c"><b>④ 운영</b></td><td><span class="code">관찰기록</span>(입력 3종: 즉석 메모/수업 녹취록/녹음 음성 — 음성·전사는 Drive 밖 로컬 전용) → <span class="code">피드백</span></td><td>수행기록/관찰기록-반.csv(번호·날짜·사실·역량) · 산출물/피드백-반.md(질문 중심)</td><td>기록된 사실의 진위(녹취록의 번호 확정 포함), 피드백 전달 여부·방식</td></tr>
+<tr><td class="c"><b>결과</b></td><td><span class="code">채점표</span> → <span class="code">과세특연계</span></td><td>산출물/채점표-반.csv(모든 점수에 근거) · 과세특-초안-반.md</td><td>모든 점수·문장, [확인 필요] 해소</td></tr>
+<tr><td class="c"><b>회고</b></td><td><span class="code">회고</span></td><td>회고.md — 통계·잘 작동한 것·흔들린 것·고칠 파일(+수업 운영 회고)</td><td>개선 항목 채택 → 다음 단원 반영</td></tr>
+</table></div>
+
+<div class="good"><b>세 가지 설계 원리.</b>
+① <b>백워드 설계</b>(이해 중심 교육과정, UbD): 활동부터 짜지 않는다 — 이해 목표(단원 핵심 아이디어) → 평가 → 차시 순으로 내려온다.
+② <b>형성평가 = 수행평가의 리허설</b>: 본 수행 직전 차시에 같은 사고 구조의 형성평가를 배치한다(점수화하지 않고 피드백·보완 관찰의 근거로만).
+③ <b>채점은 근거 밖으로 나가지 않는다</b>: 채점표·과세특·피드백의 근거는 <b>관찰기록 CSV + 루브릭.json 뿐</b>이다.
+①②는 선택 — 평가만 필요하면 ③부터 시작해도 된다.</div>
+
+<!-- ================================================================ -->
+<h2>3. 데이터 — 진실의 원천 (references/)</h2>
+
+<div class="scroll"><table class="small">
+<tr><th style="width:26%">파일</th><th>담긴 것</th><th>누가 쓰나</th></tr>
+<tr><td><span class="code">교과목록.json</span></td><td>19과목 분기표 — 코드·묶음(공통/일반/진로/융합선택)·<b>평가방식 3종</b>(상대평가 / 절대평가_5단계 / 절대평가_3단계)·기본학점</td><td>모든 스킬의 첫 단계(과목 확정·분기)</td></tr>
+<tr><td><span class="code">성취기준/&lt;과목&gt;.json</span> ×19</td><td>성취기준 284개 코드+원문 · 영역 · 탐구활동 · 성취기준해설 · 적용 시 고려 사항 · <b>핵심아이디어 92개</b>(과목 단위 항목 — 고유 문장은 89개, 일부 문장은 과목 간 공유) · <b>내용체계 613항목</b>(지식·이해 314 — 영역별 / 과정·기능 141 · 가치·태도 158 — 과목 단위). 전부 별책9 원문</td><td>교육과정해석·구상·단원설계·평가계획서·형성평가 등</td></tr>
+<tr><td><span class="code">평가기준/&lt;과목&gt;.json</span> ×19</td><td>성취기준별 <b>평가기준(성취수준 A~E / 상·중·하) 284개 원문</b> — KICE 학생평가지원포털(stas.moe.go.kr) 수집, 별책9 코드와 전수 대조(lint). 라벨 <b>원문(KICE 평가기준)</b>. 재수집: <span class="code">python scripts/fetch-eval-criteria.py</span></td><td><b>루브릭(수준 기술의 근거)</b>·평가계획서(부록)</td></tr>
+<tr><td><span class="code">학업성적관리-지침.md</span></td><td>경남 시행지침 수행평가 조항 <b>원문 발췌</b> — 횟수 규칙(지필 2회↑/수행 1회↑+예외), 수행 환산총점 40%↑, 과제형 금지, 모둠 개인별 평가, 소수 방지, 자료 보관. ⚠ 2026학년도 판은 학교 배포본 대조 필요</td><td>평가계획서(설계 하드룰)·루브릭</td></tr>
+<tr><td><span class="code">수행평가-도구-KICE.json</span></td><td>고교 과학 평가 도구 카탈로그 <b>269건</b>(수행 40·서논술 174·현장 55 — 도구명·성취기준·평가방법·역량). ⚠ 대부분 2015 개정 기반 — 아이디어 차용용 <b>참고(KICE 도구)</b></td><td>구상(아이디어 원천)</td></tr>
+<tr><td><span class="code">평가유형-카탈로그.md</span></td><td>§1 수행평가 유형 10종 · §2 요소 분류 어휘 8종 · §3 요소 JSON 스키마 · <b>§4 개념적 렌즈 10종 · §5 수행지시어–증거 언어 사전 · §6 핵심 질문 3층위</b> (⚠ §4~§6은 고시 원문 아님 — 패키지 내부 규약)</td><td>구상(렌즈)·루브릭(§5)·단원설계(§4·§6)·피드백(§5·§6)</td></tr>
+<tr><td><span class="code">수행평가-요소/화학-&lt;출판사&gt;.json</span> ×4</td><td>교과서·지도서에서 추출한 수행평가 요소 <b>422개</b>(동아 117·미래엔 128·비상 75·천재 102) — 활동명·유형·영역·쪽. <b>⚠ 로컬 전용(저작권)</b></td><td>구상(아이디어 원천)·단원설계(쪽 배치)·형성평가(평가자료)</td></tr>
+<tr><td><span class="code">관찰기록-양식.md</span></td><td>실시 단계 CSV 규격 — 4열 고정(번호·날짜·관찰한 사실·관련 역량)·비식별·사실만 기록(평가어 금지)</td><td>관찰기록 스킬 + lint</td></tr>
+<tr><td><span class="code">과세특-기재요령.md</span></td><td>금지표현·작성 원칙 · <b>분량 확정</b>: 과목별 한글 500자=1,500Byte(NEIS 한글 3Byte·영문/숫자/공백 1Byte), <b>공통과목(통합과학 등)은 1·2 합산 500자</b> — 2026 기재요령(교육부) [참고자료 8] 원문 근거</td><td>과세특연계 스킬 + lint(바이트 산정)</td></tr>
+<tr><td><span class="code">A4-인쇄-CSS.md</span></td><td>HTML 산출물 공통 인쇄 스타일</td><td>모든 HTML 산출물</td></tr>
+<tr><td><span class="code">_원문/</span> · <span class="code">_교과서/</span></td><td>교육부 고시 제2022-33호 [별책 9] PDF·텍스트 · <b>2026 학교생활기록부 기재요령(고등학교, 교육부)</b> · <b>2025 경남 학업성적관리 시행지침(HWP)</b>(검증·갱신 근거) / 교과서·지도서 원본 PDF(<b>⚠ 로컬 전용</b>)</td><td>데이터 재추출·교사 원문 대조</td></tr>
+</table></div>
+
+<div class="warn"><b>저작권 — 공유 시 반드시 제외:</b> <span class="code">references/_교과서/</span>, <span class="code">references/수행평가-요소/</span>, <span class="code">자료분석/_원본/</span>(타 교사·기관 연수 자료)는 <b>로컬 전용</b>이다. 공개 저장소·동료 공유 시 이 폴더들을 빼야 한다.</div>
+
+<!-- ================================================================ -->
+<h2>4. 검증 체계 — lint가 실제로 잡는 것</h2>
+
+<div class="scroll"><table class="small">
+<tr><th class="c" style="width:14%">대상</th><th>검사 내용</th></tr>
+<tr><td class="c">references</td><td>교과목록↔성취기준 파일 정합(경로 실재·평가방식·묶음 일치), 코드 형식·중복, 빈 원문, 핵심아이디어 존재, <b>내용체계 구조</b>(범주 3종·영역명 정확 일치·빈 항목), 수행평가-요소 어휘·쪽 정수, <b>평가기준↔성취기준 코드 전수 대조</b>(KICE 데이터가 별책9와 어긋나면 잡힘)</td></tr>
+<tr><td class="c">meta.json</td><td>과목코드 실재, 평가방식·묶음이 교과목록과 일치, 성취기준코드 실재, 산출물 목록↔실제 파일 일치</td></tr>
+<tr><td class="c">루브릭</td><td>html/json <b>쌍</b> 존재 + 내용 완전 일치, 수준·배점 구조, 배점 역전 금지, 최고 수준 배점 합=만점, 성취기준 실재</td></tr>
+<tr><td class="c">HTML</td><td>인용된 성취기준 코드 실재 / 평가계획서·활동지·<b>형성평가</b>는 코드 병기 시 <b>원문 전문 포함</b>(요약·각색하면 잡힘)</td></tr>
+<tr><td class="c">md</td><td>과제 폴더의 모든 md(해석·단원설계·구상·회고·피드백 등)에 인용된 성취기준 코드 실재성</td></tr>
+<tr><td class="c">관찰기록</td><td>4열 양식·<b>번호 숫자만(비식별)</b>·빈 사실 금지·날짜 형식·평가어("잘함" 류) 경고</td></tr>
+<tr><td class="c">채점표</td><td>수준·배점이 루브릭.json에 실재, <b>근거 없는 점수 금지</b>, 합계 검산, 번호 중복 금지, 미채점 시 합계도 [확인 필요], 관찰기록과 학생 대조</td></tr>
+<tr><td class="c">과세특</td><td>금지표현(수상·논문·장학금 등 17종), 분량 — <b>NEIS 바이트 산정</b>(한글 3Byte·영문/숫자/공백 1Byte, 상한 1,500Byte=한글 500자. 2026 기재요령 [참고자료 8] 근거)</td></tr>
+</table></div>
+
+<p class="small">자가시험 <span class="code">lint-test.mjs</span>: 임시 샌드박스에 위반 37종(가짜 코드·배점 조작·근거 삭제·실명·평가어·각색·내용체계 훼손·NFD 파일명·평가기준 오염 등)을 하나씩 주입해 lint가 전부 검출하는지 확인한다. lint를 고칠 때마다 함께 통과시켜야 한다.</p>
+
+<!-- ================================================================ -->
+<h2>5. 폴더 구조</h2>
+
+<pre class="tree">
+Project_화학수행평가패키지/
+├── CLAUDE.md                에이전트 하드룰 7계명 (AI 행동 규칙의 원본)
+├── PROJECT.md               사용 가이드 (동료 공유 시 첫 문서)
+├── 단원-프로토콜.md          ★ 단원 사이클: ①해석→②수업 설계→③평가 설계→④운영→결과→회고
+├── 평가-프로토콜.md          ★ ③~회고 구간의 원본 (준비→실시→결과 정리→회고)
+├── 이어가기.md               세션 연속성 메모 (새 기기·새 세션은 여기부터)
+├── 패키지-이해.html          (이 문서)
+├── .claude/skills/          스킬 12종 — 산출물별 생성 규칙(SKILL.md)
+├── scripts/                 lint.mjs(검증기) · lint-test.mjs(자가시험 37종) · html2pdf.sh(Mac)
+│                            · combine-pdf.py · transcribe.py(수업 녹음→녹취록) · fetch-*.py(KICE 재수집) — 겸용
+├── references/              ★ 진실의 원천 (위 §3)
+├── assessments/             과제 폴더들
+│   ├── _template/           새 과제 뼈대 (복사해서 시작)
+│   ├── 화학-화학의언어/       시연 A — 평가 구간(③~회고) 완주 (연수 데모 세트)
+│   ├── 화학-화학평형/         시연 B — 단원 사이클 앞구간(①해석→구상→②설계)
+│   ├── 화학-물질의구조와성질/  시연 C — 단원 사이클 전 구간(①~회고) 완주, 산출물 13종
+│   └── _모음-화학-*/          열람용 사본 모음 2종 (00_목차.html · 단일 PDF 30쪽)
+└── 자료분석/                 외부 자료 분석(2차 정리) + _원본/(로컬 전용)
+</pre>
+
+<!-- ================================================================ -->
+<h2>6. 실제 사례 세 개 — 지금 폴더에 있는 것</h2>
+
+<h3>시연 A · 화학-화학의언어 — 평가 구간 완주 (7/4 연수 데모 세트)</h3>
+<ul>
+<li>[③준비] 평가계획서·루브릭(html+json 쌍)·활동지 — <b>PDF 3종 완비</b> / [④실시] 관찰기록-1반.csv(5명·12행) + <b>관찰기록-2반.csv(가상 데모 데이터, 라이브 시연용)</b></li>
+<li>[결과] 채점표-1반.csv — 모든 점수에 관찰 날짜·근거, 기록이 부족한 2명은 <b>[확인 필요]</b>(지어내지 않음의 실증) / 과세특-초안-1반.md / [회고] 회고.md</li>
+<li>전 구간을 한 번에 보려면: <span class="code">assessments/_모음-화학-화학의언어/00_목차.html</span></li>
+</ul>
+
+<h3>시연 B · 화학-화학평형 — 단원 사이클 앞구간 (①→②)</h3>
+<ul>
+<li>[①] <b>해석.md</b> — 성취기준 4개 원문, 내용체계 분해(지식·이해 3요소 등), 수행 동사 위계 분석("설명"과 "적용·예측"이 절반씩 → 루브릭 최고 수준의 좌표), 연계 지도</li>
+<li>[③구상] <b>구상.md</b> — 렌즈(균형×변화·모델)로 단원 핵심 아이디어 제안, 후보 8개(평가유형 8종, 출판사 4종 쪽 인용)</li>
+<li>[②] <b>단원설계.md</b> — 핵심 질문 6개(사실적·개념적·논쟁적 3층위), 9차시 예시 차시표(8차시 [형성]=리허설 → 9차시 [수행])</li>
+<li>다음 단계: 교사가 구상 후보 채택 → <span class="code">평가계획서</span> → <span class="code">루브릭</span> → <span class="code">활동지</span> → (실시) → …</li>
+</ul>
+
+<h3>시연 C · 화학-물질의구조와성질 — 단원 사이클 전 구간(①~회고) 완주</h3>
+<ul>
+<li>12개 스킬을 처음부터 끝까지 실행한 산출물 <b>13종</b>: 해석 → 단원설계 → 형성평가(6차시) → 구상 → 평가계획서 → 루브릭 쌍 → 활동지 → 관찰기록-1반 → 피드백-1반 → 채점표-1반 → 과세특-초안-1반 → 회고</li>
+<li>채점 5명 중 3명이 <b>[확인 필요]</b> — 기록이 부족하면 지어내지 않는다는 원칙의 실증</li>
+<li>한 번에 보려면: <span class="code">assessments/_모음-화학-물질의구조와성질/</span> — 실행 설명 HTML + 번호순 사본 13 + <b>단일 PDF(30쪽, 책갈피)</b></li>
+</ul>
+
+<!-- ================================================================ -->
+<h2>7. 사용법 — 자연어로 부른다</h2>
+
+<div class="scroll"><table class="small">
+<tr><th class="c" style="width:12%">단계</th><th>이렇게 말하면</th><th>생기는 것</th></tr>
+<tr><td class="c">①</td><td>"화학 <b>화학 평형</b> 단원 <b>교육과정 해석</b>해줘"</td><td>해석.md</td></tr>
+<tr><td class="c">②</td><td>"이 단원 <b>단원설계</b> 만들어줘" → "2차시 <b>형성평가</b> 문항 만들어줘"</td><td>단원설계.md · 형성평가-2차시.html</td></tr>
+<tr><td class="c">③</td><td>"이 단원에서 해볼 만한 <b>수행평가 아이디어</b> 내줘" → "<b>평가계획서</b>" → "<b>루브릭</b>도" → "<b>활동지</b>도"</td><td>구상.md → 평가계획서.html → 루브릭 쌍 → 활동지.html</td></tr>
+<tr><td class="c">④</td><td>"이 수행 메모를 1반 <b>관찰기록</b>으로 정리해줘" → "1반 기록으로 번호별 <b>피드백</b> 초안 써줘"</td><td>관찰기록-1반.csv → 피드백-1반.md</td></tr>
+<tr><td class="c">결과</td><td>"1반 관찰기록을 루브릭에 맞춰 <b>채점표</b>로" → "번호별 <b>과세특 초안</b> 써줘"</td><td>채점표-1반.csv → 과세특-초안-1반.md</td></tr>
+<tr><td class="c">회고</td><td>"이번 평가 <b>회고</b> 정리해줘"</td><td>회고.md</td></tr>
+</table></div>
+
+<p class="small">모든 산출물 생성 뒤 <span class="code">node scripts/lint.mjs</span>가 자동 실행·통과되어야 한다. HTML은 브라우저 인쇄(Ctrl+P→A4) 또는 <span class="code">bash scripts/html2pdf.sh</span>로 PDF화.</p>
+
+<!-- ================================================================ -->
+<h2>8. 방법론의 출처 — 무엇이 공식이고 무엇이 차용인가</h2>
+
+<div class="scroll"><table class="small">
+<tr><th style="width:30%">요소</th><th class="c" style="width:16%">지위</th><th>비고</th></tr>
+<tr><td>성취기준·탐구활동·해설·핵심아이디어·내용체계</td><td class="c"><span class="tag b9">원문(별책9)</span></td><td>교육부 고시 제2022-33호 [별책 9]. 원문 그대로만 인용</td></tr>
+<tr><td>평가방식 3종·학점 분기</td><td class="c"><span class="tag b9">원문(교과목록)</span></td><td>교과목록.json — 교육부 고시·NCIC·경남교육청 자료 근거(_메타에 출처 명시). 융합선택·과학탐구실험에 석차등급 전제 금지</td></tr>
+<tr><td>교사 4단계 역할 · 개념적 렌즈 · 수행지시어 사전</td><td class="c"><span class="tag mth">참고(임정미)</span></td><td>임정미 연수자료 — <b>개념기반 교육과정과 수업</b>(CBCI; Erickson, Lanning &amp; French, 2017) 계열. ⚠ 고시 원문 아님. 원본은 로컬 전용</td></tr>
+<tr><td>형성평가=리허설 배치 · GRASPS · 핵심 질문 사례</td><td class="c"><span class="tag mth">참고(김보경)</span></td><td>김보경 단원 설계안 — <b>이해 중심 교육과정</b>(UbD, 백워드 설계; Wiggins &amp; McTighe, 2005) 계열. <b>2015 개정 기반이라 코드·단원 전용 금지</b>, 방법만 차용</td></tr>
+<tr><td colspan="3" class="small">정식 명칭·약자·원저자 표준: <span class="code">references/평가유형-카탈로그.md</span> "방법론 용어 표준". <b>CBCI</b>=Concept-Based Curriculum and Instruction, <b>UbD</b>=Understanding by Design, <b>GRASPS</b>=UbD의 수행과제 맥락 틀.</td></tr>
+<tr><td>단원 핵심 아이디어·핵심 질문 문장·차시 배분·매핑 표</td><td class="c"><span class="tag cr">제안</span></td><td>AI/교사의 설계 제안 — 항상 제안 라벨, 교사 확정 대상</td></tr>
+</table></div>
+
+<!-- ================================================================ -->
+<h2>9. 현재 상태와 남은 일</h2>
+
+<ul>
+<li><b>완료</b>: 데이터(19과목 성취기준 284 + 핵심아이디어 + 내용체계 + <b>KICE 평가기준 284</b> + 경남 지침 발췌 + 도구 카탈로그 269), 스킬 12종(관찰기록에 <b>수업 녹취록 가져오기</b> 모드 — 전사 스크립트 겸용), 프로토콜 2종, lint+자가시험 37종, 시연 3과제(전 구간 완주 1 포함), 과세특 분량 원문 확정(한글 500자=1,500Byte·공통과목 1·2 합산).</li>
+<li><b>7/4</b>: 연수 라이브 데모 — 2반 관찰기록으로 "기록→채점표" 시연 세트 준비됨.</li>
+<li><b>교사 확인 대기</b>: ① 2026학년도 경남 학업성적관리 시행지침 학교 배포본 대조(현재 2025판 기준) ② 담당 과목 성취기준·핵심아이디어·내용체계·평가기준 원문 대조(AI 전수 대조 완료, 최종은 교사) ③ 화학평형 구상 후보 채택 ④ 수업 녹음 도입 시 동의·보관·폐기 절차(학교 지침).</li>
+<li><b>선택 과제</b>: 형성평가·피드백 스킬 실전 시연, GitHub 공유 저장소(로컬 전용 폴더 제외 필수), 추가 스킬(실험보고서양식·논술형문항·예시답안), 학교알리미 타校 평가계획 사례 수집.</li>
+</ul>
+
+<div class="foot">
+본 문서는 패키지 이해를 돕는 <b>파생 요약</b>이며, 규칙·절차의 원본은 CLAUDE.md(하드룰)·단원-프로토콜.md·평가-프로토콜.md다.
+문서 간 불일치가 보이면 원본이 우선하고, 이 문서를 갱신한다. · 화학(과학) 수행평가 패키지 · 2026-07-04
+</div>
+</body></html>

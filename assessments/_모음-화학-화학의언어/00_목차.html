@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8">
+<title>수행평가 전체 자료 — 화학 「화학의 언어」</title>
+<style>
+@page { size: A4 portrait; margin: 15mm; }
+* { box-sizing: border-box; }
+body { font-family:'Pretendard','맑은 고딕','Malgun Gothic',sans-serif; font-size:10.5pt; color:#111; line-height:1.55; margin:0 auto; max-width:960px; padding:20px; }
+h1 { font-size:17pt; margin:0 0 4pt; }
+h2 { font-size:13pt; margin:22pt 0 6pt; border-left:4px solid #2b6; padding-left:7pt; }
+h3 { font-size:11.5pt; margin:12pt 0 4pt; }
+h4 { font-size:10.5pt; margin:10pt 0 3pt; color:#333; }
+.sub { color:#555; font-size:9.5pt; margin-bottom:10pt; }
+.meta-badges span { display:inline-block; background:#eef6ef; border:1px solid #cde3d2; border-radius:4px; padding:1pt 8pt; margin:0 5pt 4pt 0; font-size:9pt; }
+.flow { background:#f7f9f7; border:1px solid #dde5dd; border-radius:6px; padding:8pt 10pt; font-size:9.5pt; margin:10pt 0; }
+table { width:100%; border-collapse:collapse; margin:6pt 0; }
+th,td { border:1px solid #999; padding:4pt 6pt; vertical-align:top; text-align:left; }
+th { background:#f0f0f0; font-weight:600; }
+table.small { font-size:8.5pt; } table.small th, table.small td { padding:3pt 4pt; }
+.scroll { overflow-x:auto; }
+.code { font-family:ui-monospace,SFMono-Regular,monospace; color:#0a7d33; font-size:9.5pt; }
+.todo { background:#fff3cd; color:#8a6d00; font-weight:600; padding:0 4pt; border-radius:3px; }
+.stage { display:inline-block; color:#fff; border-radius:3px; padding:0 6pt; font-size:8.5pt; font-weight:600; }
+blockquote { border-left:3px solid #cde3d2; background:#f7faf7; margin:6pt 0; padding:4pt 10pt; color:#444; font-size:9.8pt; }
+blockquote p { margin:2pt 0; }
+ul { margin:4pt 0 8pt; padding-left:18pt; } ul.check { list-style:none; padding-left:6pt; }
+li { margin:2pt 0; }
+a { color:#0a5d8f; }
+.filecard { border:1px solid #ddd; border-radius:6px; padding:10pt 12pt; margin:14pt 0; }
+.foot { margin-top:20pt; font-size:8.5pt; color:#666; border-top:1px solid #ccc; padding-top:6pt; }
+@media print { .noprint { display:none; } body { padding:0; } }
+</style></head><body>
+
+<h1>수행평가 전체 자료 (A to Z) — 화학 「화학의 언어」</h1>
+<div class="sub">평가 프로토콜(준비 → 실시 → 결과 정리 → 회고) 전 구간 산출물 열람용 모음 · 생성일 2026-07-03</div>
+<div class="meta-badges">
+  <span>과목: 화학</span><span>묶음: 일반선택</span><span>평가방식: 상대평가</span>
+  <span>성취기준: [12화학01-01] [12화학01-02] [12화학01-03]</span><span>1반 · 5명(시연)</span>
+</div>
+<div class="flow"><strong>프로토콜:</strong> [준비] 평가계획서·루브릭·활동지 → [실시] 관찰기록(비식별) → [결과] 채점표·과세특 초안 → [회고] 다음 학기 개선
+<br><strong>검증:</strong> lint 통과(오류 0·경고 0) · 모든 점수에 관찰 근거 연결 · 기록 부족은 <span class="todo">[확인 필요]</span>로 비움</div>
+
+<blockquote><p><strong>이 폴더는 열람용 사본입니다.</strong> 원본(진실의 원천)은 <code>assessments/화학-화학의언어/</code>이며, 수정은 반드시 원본에서 합니다. 모든 문서는 <strong>초안</strong>으로 교사 검토·확정을 전제합니다.</p></blockquote>
+
+<h2>파일 목록 (프로토콜 순)</h2>
+<table><thead><tr><th style="width:12%">단계</th><th style="width:30%">파일</th><th>내용</th></tr></thead><tbody>
+<tr><td><span class="stage" style="background:#2b6">준비</span></td><td><a href="01_%EA%B3%BC%EC%A0%9C%EC%A0%95%EB%B3%B4.json">01_과제정보.json</a></td><td>과제 정보(meta) — 과목·묶음·평가방식·성취기준·반영비율</td></tr>
+<tr><td><span class="stage" style="background:#2b6">준비</span></td><td><a href="02_%ED%8F%89%EA%B0%80%EA%B3%84%ED%9A%8D%EC%84%9C.pdf">02_평가계획서.pdf</a></td><td>평가계획서 (인쇄용 A4) · 원본: 02_평가계획서.html</td></tr>
+<tr><td><span class="stage" style="background:#2b6">준비</span></td><td><a href="03_%EB%A3%A8%EB%B8%8C%EB%A6%AD.pdf">03_루브릭.pdf</a></td><td>채점기준표 (인쇄용 A4) · 원본: 03_루브릭.html</td></tr>
+<tr><td><span class="stage" style="background:#2b6">준비</span></td><td><a href="03_%EB%A3%A8%EB%B8%8C%EB%A6%AD-%EA%B8%B0%EA%B3%84%EC%9A%A9.json">03_루브릭-기계용.json</a></td><td>루브릭 기계용 쌍 — 채점표·lint가 쓰는 수준·배점의 유일한 근거</td></tr>
+<tr><td><span class="stage" style="background:#2b6">준비</span></td><td><a href="04_%ED%99%9C%EB%8F%99%EC%A7%80.pdf">04_활동지.pdf</a></td><td>학생용 활동지 (인쇄용 A4) · 원본: 04_활동지.html</td></tr>
+<tr><td><span class="stage" style="background:#26c">실시</span></td><td><a href="05_%EA%B4%80%EC%B0%B0%EA%B8%B0%EB%A1%9D-1%EB%B0%98.csv">05_관찰기록-1반.csv</a></td><td>관찰기록 — 번호·날짜·관찰한 사실·관련 역량 (비식별)</td></tr>
+<tr><td><span class="stage" style="background:#c60">결과</span></td><td><a href="06_%EC%B1%84%EC%A0%90%ED%91%9C-1%EB%B0%98.csv">06_채점표-1반.csv</a></td><td>채점표 — 모든 점수에 관찰 근거, 기록 부족은 <span class="todo">[확인 필요]</span></td></tr>
+<tr><td><span class="stage" style="background:#c60">결과</span></td><td><a href="07_%EA%B3%BC%EC%84%B8%ED%8A%B9-%EC%B4%88%EC%95%88-1%EB%B0%98.md">07_과세특-초안-1반.md</a></td><td>과세특 초안 (번호별) — 사실 → 역량 변환</td></tr>
+<tr><td><span class="stage" style="background:#c60">결과</span></td><td><a href="08_%EA%B3%BC%EC%84%B8%ED%8A%B9-%EC%88%98%EC%A4%80%EB%B3%84%EC%98%88%EC%8B%9C.md">08_과세특-수준별예시.md</a></td><td>과세특 수준별 예시 (상·중·하)</td></tr>
+<tr><td><span class="stage" style="background:#96c">회고</span></td><td><a href="09_%ED%9A%8C%EA%B3%A0.md">09_회고.md</a></td><td>회고 — 통계·잘 작동한 것·흔들린 것·다음에 고칠 파일</td></tr>
+</tbody></table>
+
+<h2><span class="stage" style="background:#2b6">준비</span> 설계 요약</h2>
+<div class="filecard">
+<h3>과제 정보 (01_과제정보.json)</h3>
+<div class="scroll"><table><tbody>
+<tr><th>과목 / 묶음 / 평가방식</th><td>화학 / 일반선택 / 상대평가 (석차등급 1~5 + 성취도 A~E)</td></tr>
+<tr><th>단원</th><td>화학의 언어</td></tr>
+<tr><th>성취기준</th><td class="code">[12화학01-01]<br>[12화학01-02]<br>[12화학01-03]</td></tr>
+<tr><th>학년/학기 · 반영비율 · 평가시기</th><td><span class="todo">[확인 필요]</span> — 학교 규정으로 교사가 확정</td></tr>
+</tbody></table></div>
+<p>평가계획서 인쇄본: <a href="02_평가계획서.pdf">02_평가계획서.pdf</a> · 활동지 인쇄본: <a href="04_활동지.pdf">04_활동지.pdf</a></p>
+<h3>루브릭(채점기준) 요약</h3>
+<div class="scroll"><table><thead><tr><th>평가요소</th><th>성취기준</th><th>우수</th><th>보통</th><th>미흡</th></tr></thead><tbody><tr><td>화학의 기여 사례 조사·발표<br><small>(약칭: 사례발표)</small></td><td class="code">[12화학01-01]</td><td><strong>30점</strong> 화학의 기여 사례를 다양하게 조사하고 근거를 들어 명확히 발표하며, 화학에 대한 흥미·호기심을 구체적으로 표현한다.</td><td><strong>20점</strong> 기여 사례를 조사해 발표하나 근거 제시 또는 설명이 일부 부족하다.</td><td><strong>10점</strong> 사례 조사가 단편적이고 발표 내용의 근거가 미흡하다.</td></tr><tr><td>몰 개념과 물질의 양 표현<br><small>(약칭: 몰환산)</small></td><td class="code">[12화학01-02]</td><td><strong>30점</strong> 다양한 단위(질량·입자 수·기체 부피 등)를 몰로 정확히 환산하고, 물질의 양을 몰 단위로 일관되게 표현한다.</td><td><strong>20점</strong> 몰 환산은 대체로 가능하나 일부 단위에서 오류가 있다.</td><td><strong>10점</strong> 몰 개념 이해가 부분적이고 환산에 도움이 필요하다.</td></tr><tr><td>화학 반응식과 양적 관계 탐구<br><small>(약칭: 양적관계)</small></td><td class="code">[12화학01-03]</td><td><strong>40점</strong> 여러 반응을 화학 반응식으로 정확히 나타내고, 계수비를 근거로 반응물·생성물의 양적 관계를 설명한다.</td><td><strong>27점</strong> 화학 반응식 작성은 가능하나 양적 관계 설명이 일부 미흡하다.</td><td><strong>13점</strong> 화학 반응식 작성과 양적 관계 이해에 도움이 필요하다.</td></tr></tbody></table></div><p>만점 <strong>100점</strong> · 유형 분석적 · 상세 인쇄본: <a href="03_루브릭.pdf">03_루브릭.pdf</a></p>
+</div>
+
+<h2><span class="stage" style="background:#26c">실시</span> 관찰기록 — 1반 (05_관찰기록-1반.csv)</h2>
+<div class="filecard"><div class="scroll"><table><thead><tr><th>번호</th><th>날짜</th><th>관찰한 사실</th><th>관련 역량</th></tr></thead><tbody><tr><td>3</td><td>6.9</td><td>플라스틱 대체 소재 사례 3가지를 출처와 함께 발표하고, 질문을 받자 추가 근거를 제시함</td><td>자료조사·의사소통</td></tr><tr><td>3</td><td>6.16</td><td>질량·입자 수·기체 부피를 몰로 환산하는 6문항을 모두 해결하고 단위 소거 과정을 짝에게 설명함</td><td>양적사고·의사소통</td></tr><tr><td>3</td><td>6.23</td><td>메테인 연소 반응식을 세우고 계수비를 근거로 이산화 탄소 생성량을 계산해 모둠에 설명함</td><td>모형화·데이터해석</td></tr><tr><td>7</td><td>6.9</td><td>아스피린 개발 사례를 발표했으나 출처를 묻는 질문에 답하지 못함</td><td>자료조사</td></tr><tr><td>7</td><td>6.16</td><td>질량→몰 환산은 정확했으나 기체 부피 환산에서 온도·압력 조건을 빠뜨림, 짝의 안내를 받아 수정함</td><td>양적사고·자기점검</td></tr><tr><td>7</td><td>6.23</td><td>반응식 계수 맞추기는 완료했으나 양적 관계 설명에서 계수비와 질량비를 혼동함</td><td>모형화</td></tr><tr><td>12</td><td>6.9</td><td>암모니아 합성 사례를 식량 문제와 연결해 발표하고 화학의 사회적 역할에 대한 자기 생각을 덧붙임</td><td>자료조사·의사소통</td></tr><tr><td>12</td><td>6.16</td><td>몰 환산 문제에서 아보가드로수를 곱하는 위치를 두 차례 질문하고 예제를 보며 따라 풀음</td><td>양적사고</td></tr><tr><td>12</td><td>6.23</td><td>중화 적정 데이터로 농도를 계산하고 종말점 판단 근거를 모둠에 설명함</td><td>데이터해석·의사소통</td></tr><tr><td>15</td><td>6.9</td><td>모둠 발표 자료 제작에서 사례 이미지 정리를 맡아 참여함</td><td>협업</td></tr><tr><td>21</td><td>6.16</td><td>몰 환산 6문항 중 4문항을 해결하고, 오답의 원인을 스스로 찾아 수정함</td><td>양적사고·자기점검</td></tr><tr><td>21</td><td>6.23</td><td>반응식 작성은 교사 안내로 완성했고 양적 관계 계산은 짝의 도움을 받아 마무리함</td><td>모형화</td></tr></tbody></table></div></div>
+
+<h2><span class="stage" style="background:#c60">결과</span> 채점표 — 1반 (06_채점표-1반.csv)</h2>
+<div class="filecard"><div class="scroll"><table class="small"><thead><tr><th>번호</th><th>사례발표_수준</th><th>사례발표_점수</th><th>사례발표_근거</th><th>몰환산_수준</th><th>몰환산_점수</th><th>몰환산_근거</th><th>양적관계_수준</th><th>양적관계_점수</th><th>양적관계_근거</th><th>합계</th><th>비고</th></tr></thead><tbody><tr><td>3</td><td>우수</td><td>30</td><td>6.9 사례 3가지를 출처와 함께 발표, 질문에 추가 근거 제시</td><td>우수</td><td>30</td><td>6.16 환산 6문항 모두 해결하고 단위 소거 과정 설명</td><td>우수</td><td>40</td><td>6.23 계수비를 근거로 생성량 계산해 모둠에 설명</td><td>100</td><td></td></tr><tr><td>7</td><td>보통</td><td>20</td><td>6.9 사례 발표했으나 출처 질문에 답하지 못함(근거 제시 부족)</td><td>보통</td><td>20</td><td>6.16 기체 부피 환산에서 조건 누락(일부 단위 오류)</td><td>보통</td><td>27</td><td>6.23 계수 맞추기는 완료했으나 계수비·질량비 혼동(설명 일부 미흡)</td><td>67</td><td></td></tr><tr><td>12</td><td>우수</td><td>30</td><td>6.9 사례를 식량 문제와 연결해 발표, 자기 생각 덧붙임</td><td>미흡</td><td>10</td><td>6.16 아보가드로수 위치 두 차례 질문, 예제 따라 풀음(환산에 도움 필요)</td><td>우수</td><td>40</td><td>6.23 적정 데이터로 농도 계산하고 종말점 근거 설명</td><td>80</td><td>몰환산 보완 관찰 권장 · 양적관계 우수 판정은 적정 계산 기록 기반(반응식·계수비 직접 관찰 없음 — 교사 확인)</td></tr><tr><td>15</td><td><span class="todo">[확인 필요]</span></td><td><span class="todo">[확인 필요]</span></td><td><span class="todo">[확인 필요]</span></td><td><span class="todo">[확인 필요]</span></td><td><span class="todo">[확인 필요]</span></td><td><span class="todo">[확인 필요]</span></td><td><span class="todo">[확인 필요]</span></td><td><span class="todo">[확인 필요]</span></td><td><span class="todo">[확인 필요]</span></td><td><span class="todo">[확인 필요]</span></td><td>6.9 자료 제작 참여 기록만 있어 판정 불가 — 보완 관찰 필요</td></tr><tr><td>21</td><td><span class="todo">[확인 필요]</span></td><td><span class="todo">[확인 필요]</span></td><td><span class="todo">[확인 필요]</span></td><td>보통</td><td>20</td><td>6.16 환산 6문항 중 4문항 해결(일부 오류·자기 수정)</td><td>미흡</td><td>13</td><td>6.23 반응식 작성에 교사 안내·계산에 짝 도움 필요</td><td><span class="todo">[확인 필요]</span></td><td>사례발표 관찰 기록 없음 — 보완 관찰 필요</td></tr></tbody></table></div>
+<p>근거는 <strong>관찰기록 + 루브릭 기계용 JSON뿐</strong> · 합계 검산·근거 유무는 lint가 검사 · <span class="todo">[확인 필요]</span> 행은 교사가 보완 관찰 후 확정</p></div>
+
+<h2><span class="stage" style="background:#c60">결과</span> 과세특 초안 (번호별 · 07_과세특-초안-1반.md)</h2>
+<div class="filecard"><h3>과세특 초안 — 화학 「화학의 언어」 1반 (번호별)</h3>
+<blockquote>
+<p>근거: <code>수행기록/관찰기록-1반.csv</code> + <code>산출물/채점표-1반.csv</code> · 규정: <code>references/과세특-기재요령.md</code></p>
+<p>변환 원칙: <strong>사실 → 역량</strong> (관찰된 사실 문장에서 출발해 역량 서술로 연결. 기록에 없는 사실 없음)</p>
+<p>※ 본 문서는 <strong>초안</strong>입니다. 모든 문장은 교사가 검토·수정 후 확정합니다. 실명·점수·등급은 넣지 않습니다.</p>
+</blockquote>
+<h4>3번</h4>
+<p>화학이 현대 사회에 기여한 사례로 플라스틱 대체 소재를 조사하여 출처와 함께 발표하고 질문에 추가 근거를 제시하는 등 자료를 비판적으로 다루는 태도를 보임. 질량, 입자 수, 기체 부피를 몰 단위로 환산하는 문제를 모두 해결하고 단위 소거 과정을 동료에게 설명하며 양적 사고와 의사소통 역량을 드러냄. 메테인 연소 반응식을 세우고 계수비를 근거로 생성물의 양을 계산하여 모둠에 설명하는 과정에서 화학 반응의 양적 관계를 모형으로 다루는 능력이 돋보임.</p>
+<h4>7번</h4>
+<p>아스피린 개발 사례를 조사하여 화학의 기여를 발표함. 질량을 몰로 환산하는 과정은 정확히 수행하였고, 기체 부피 환산에서 누락한 조건을 동료의 안내를 받아 스스로 수정하며 자기 점검 태도를 보임. 화학 반응식의 계수를 맞추는 활동을 완수하였으며, 계수비와 질량비의 구분은 보완이 필요한 지점으로 관찰됨.</p>
+<h4>12번</h4>
+<p>암모니아 합성 사례를 식량 문제와 연결하여 발표하고 화학의 사회적 역할에 대한 자기 생각을 덧붙이는 등 과학과 사회를 잇는 안목을 보임. 중화 적정 실험에서 데이터를 해석하여 농도를 계산하고 종말점 판단 근거를 모둠에 설명하는 의사소통 역량이 돋보임. 몰 환산에서는 예제를 참고하며 질문을 통해 개념을 보완해 가는 적극적인 태도를 보임.</p>
+<h4>15번</h4>
+<p>모둠 발표 자료 제작에서 사례 이미지 정리를 맡아 협업에 참여함. [확인 필요 — 개인 수행에 대한 관찰 기록이 부족합니다. 보완 관찰 후 작성하세요.]</p>
+<h4>21번</h4>
+<p>몰 환산 문제를 해결하며 오답의 원인을 스스로 찾아 수정하는 자기 점검 태도를 보임. 화학 반응식 작성과 양적 관계 계산을 교사와 동료의 도움을 받아 끝까지 마무리하는 성실함을 보임. [확인 필요 — 화학의 기여 사례 조사·발표 활동에 대한 관찰 기록이 없습니다.]</p></div>
+
+<h2><span class="stage" style="background:#c60">결과</span> 과세특 수준별 예시 (08_과세특-수준별예시.md)</h2>
+<div class="filecard"><h3>과세특 초안 — 화학 「화학의 언어」</h3>
+<blockquote>
+<p>과목: 화학(일반선택) · 단원: 화학의 언어 · 성취기준 [12화학01-01]·[12화학01-02]·[12화학01-03]</p>
+<p>규정 근거: <code>references/과세특-기재요령.md</code> (과목당 500자 이내, 금지표현·실명 금지)</p>
+<p>※ 본 초안은 <strong>수준별 예시</strong>입니다. 교사가 학생별 실제 관찰에 맞게 <strong>검토·수정</strong>하여 확정하세요. 학생 실명·개인정보는 넣지 않았습니다.</p>
+</blockquote>
+<h4>상 수준 예시</h4>
+<p>다양한 물질의 몰질량을 직접 계산하고 특정 몰수에 해당하는 질량을 측정하여 계산값과 비교하는 탐구를 수행함. 측정 과정에서 발생한 오차의 원인을 시약의 흡습성과 측정 도구의 한계 등으로 분석하는 모습이 돋보임. 여러 화학 반응을 화학 반응식으로 정확히 나타내고, 반응식의 계수비가 반응물과 생성물의 몰수비임을 실험 결과를 근거로 논리적으로 설명함. 화학이 현대 과학·기술·사회의 발전에 기여한 사례를 조사하여 발표하는 활동에서 자료를 체계적으로 구성하고 화학에 대한 흥미와 탐구 의지를 적극적으로 드러냄.</p>
+<h4>중 수준 예시</h4>
+<p>다양한 단위를 몰로 환산하는 방법을 이해하고 물질의 양을 몰 단위로 표현함. 화학 반응식을 작성하고 반응에서의 양적 관계를 설명하였으나, 일부 복잡한 반응에서는 계수비를 적용하는 데 어려움을 보여 추가 연습이 필요함. 화학의 기여 사례를 조사하여 발표하는 활동에 성실히 참여하며 화학 개념을 일상생활과 연결하려는 노력을 보임.</p>
+<h4>하 수준 예시</h4>
+<p>몰의 의미와 물질의 양을 몰 단위로 표현하는 기초 개념을 학습함. 화학 반응식 작성과 양적 관계 해석에는 교사의 안내가 필요하였으며, 반복 학습을 통해 간단한 반응에서의 몰수 관계를 이해하려는 태도를 보임. 화학 관련 사례를 조사하는 모둠 활동에 참여함.</p></div>
+
+<h2><span class="stage" style="background:#96c">회고</span> (09_회고.md)</h2>
+<div class="filecard"><h3>회고 — 화학 「화학의 언어」 (초안)</h3>
+<blockquote>
+<p>근거: <code>산출물/채점표-1반.csv</code> · 작성일: 2026-07-02 · 평가 프로토콜 단계 4</p>
+<p>※ 데이터 요약은 채점표에서 기계적으로 집계했습니다. 소감·개선 채택은 <strong>교사가 확정</strong>합니다.</p>
+</blockquote>
+<h4>데이터 요약 (1반, 5명 기준)</h4>
+<div class="scroll"><table><thead><tr><th>평가요소</th><th>우수</th><th>보통</th><th>미흡</th><th><span class="todo">[확인 필요]</span></th></tr></thead><tbody>
+<tr><td>사례발표</td><td>2</td><td>1</td><td>0</td><td>2</td></tr>
+<tr><td>몰환산</td><td>1</td><td>2</td><td>1</td><td>1</td></tr>
+<tr><td>양적관계</td><td>2</td><td>1</td><td>1</td><td>1</td></tr>
+</tbody></table></div>
+<ul>
+<li>합계 산출 완료 3명(100·80·67점) / 교사 확인 대기 2명(15번·21번)</li>
+<li><code><span class="todo">[확인 필요]</span></code> 최다 요소: <strong>사례발표</strong> — 발표 세션(6.9) 단회 관찰이라 그날 기록이 없는 학생은 판정 불가</li>
+</ul>
+<h4>잘 작동한 것</h4>
+<ul>
+<li>관찰기록 → 루브릭 대조 채점의 근거 연결: 모든 점수에 날짜·사실 근거가 남음 (이의신청 대응 가능)</li>
+<li>기록이 부족한 학생이 <code><span class="todo">[확인 필요]</span></code>로 드러남 — 기억으로 메우지 않게 됨</li>
+</ul>
+<h4>흔들린 것</h4>
+<ul>
+<li>발표 활동(사례발표)이 단회여서 그날 결석·미관찰 학생의 근거가 없음</li>
+<li>몰환산 요소에서 '질문을 여러 번 함'이 보통/미흡 어느 쪽인지 루브릭 기술만으로 판정이 애매했음</li>
+</ul>
+<h4>다음에 고칠 것 (대상 파일 명시 — 교사 채택 여부 결정)</h4>
+<ul class="check">
+<li>☐ <code>활동지.html</code>: 사례 발표를 발표+제출물(요약문) 2트랙으로 — 단회 관찰 의존 완화</li>
+<li>☐ <code>루브릭.json</code> '몰환산' 보통/미흡 기술: 경계 행동(스스로 수정 가능 여부)을 명시해 판정 기준 구체화</li>
+<li>☐ <code>references/관찰기록-양식.md</code>: 발표류 활동은 당일 전원 1행 이상 기록 권장 문구 추가 검토</li>
+</ul>
+<blockquote>
+<p>회고 확정 시: 다음 학기 이 과제를 다시 쓰기 전에 위 목록을 먼저 반영한다.</p>
+</blockquote></div>
+
+<div class="foot">출처: 교육부 고시 제2022-33호 [별책 9] 과학과 교육과정(성취기준 원문) · 규정: references/과세특-기재요령.md ·
+본 모음의 모든 산출물은 <strong>초안</strong>이며 교사가 편집장으로 검토·확정합니다. 학생은 번호로만 표기(비식별).</div>
+</body></html>
